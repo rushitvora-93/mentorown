@@ -1,0 +1,91 @@
+.text-area{
+    background-color: white;
+    padding:5px 5px 5px 5px;
+    width:100%;
+    border-bottom:none;
+}
+.back-btn{
+    margin-top:15px;
+    margin-bottom:15px;
+    text-align: center;
+    border: 1px solid #7BC0BB;
+    box-shadow: none;
+}
+.btn-primary{
+    background-color:#7BC0BB;
+    color:white;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    float:right;
+}
+.left{
+    color:#538380;
+    float: left;
+}
+.right{
+    text-align: right;
+    margin-right:8px;
+} 
+.line{
+    margin-left:2px;
+    color: #538380;
+}
+.checkbox{
+    background-color: white;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding:5px 5px 5px 5px;
+  }
+.menuDesign{
+    /* max-height: 160px; */
+    width:100%;
+    padding:0px 10px 0px 10px;
+}
+.row {
+    margin: 15px 0px 20px 10px;
+}
+.button{
+    background-color:#7BC0BB;
+    color:white;
+}
+.right-btn{
+    margin-left:20px;   
+}
+.row_button{
+    margin-right: 20px;
+}
+.maximum{
+    max-width:500px !important;
+}
+.first{
+    margin-bottom: 22px;
+    display: flex;
+}
+.first > span{
+    color: #538380;
+}
+.span_text{
+    width:50%;
+  }
+  .span_text_desc{
+    width:100%;
+  }
+  .button_align{
+    display: inline;
+    width: 50%;
+  }
+  .button{
+    background-color:#7BC0BB;
+    color:white;
+  }
+  .years {
+    margin-left:30px;
+    background-color: #7BC0BB;
+    border: 1px solid #7BC0BB;
+    color:white;
+    font-weight: 400;
+    border-radius: 15px;
+    float: right;
+    white-space: normal;
+    word-break: break-word;
+  }

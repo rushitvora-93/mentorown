@@ -1,0 +1,118 @@
+<div class="container">
+    <div class="title">
+      <h2><b>Complete details</b></h2>
+    </div>
+    <div class="row">
+      <div id="prog-contain-div"  (click)="gotoaboutpage()">
+      <div id="prog-contain-text">About You</div>
+      <div class="outer-line">
+        <div id="prog-contain">
+          <div class="hl"></div>
+          <div class="vl"></div>
+          <div class="out-line">
+            <div class="prog">
+              <div class="percent">
+                <p><span class="textp">About</span><br>{{dataProgress.about}}%</p>
+              </div>
+              <div id="slice"class="{{dataProgress.about > 50 ? 'gt50':''}}">
+                <div class="pie aboutPercentClass" [style.transform]='aboutDEG'></div>
+                <div class="{{dataProgress.about > 50 ? 'pie fill aboutPercentClass':'hide'}}" [style.transform]='aboutDEGFill' ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="row">
+      <div id="prog-contain-div" (click)="gotoskillpage()">
+      <div id="prog-contain-text">Your skills</div>
+      <div class="outer-line">
+        <div id="prog-contain">
+          <div class="hl"></div>
+          <div class="vl"></div>
+          <div class="out-line">
+            <div class="prog">
+              <div class="percent">
+                <p><span class="textp">Skill</span><br>{{dataProgress.skill}}%</p>
+              </div>
+              <div id="slice"class="{{dataProgress.skill > 50 ? 'gt50':''}}">
+                <div class="pie aboutPercentClass" [style.transform]='skillDEG'></div>
+                <div class="{{dataProgress.skill > 50 ? 'pie fill skillPercentClass':'hide'}}" [style.transform]='skillDEGFill'></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="row">
+      <div id="prog-contain-div" (click)="gotopreferencespage()">
+      <div id="prog-contain-text">Your Preferences</div>
+      <div class="outer-line">
+        <div id="prog-contain">
+          <div class="hl"></div>
+          <div class="vl"></div>
+          <div class="out-line">
+            <div class="prog">
+              <div class="percent">
+                <p><span class="textp">Preference</span><br>{{dataProgress.preference}}%</p>
+              </div>
+              <div id="slice" class="{{dataProgress.preference > 50 ? 'gt50':''}}">
+                <div class="pie aboutPercentClass" [style.transform]='preferenceDEG'></div>
+                <div class="{{dataProgress.preference > 50 ? 'pie fill preferencePercentClass':'hide'}}" [style.transform]='preferenceDEGFill' ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="row">
+      <div id="prog-contain-div"  (click)="gotoexperiencepage()">
+      <div id="prog-contain-text">Your Experiences</div>
+      <div class="outer-line">
+        <div id="prog-contain">
+          <div class="hl"></div>
+          <div class="vl"></div>
+          <div class="out-line">
+            <div class="prog">
+              <div class="percent">
+                <p><span class="textp">Experience</span><br>{{dataProgress.experience}}%</p>
+              </div>
+              <div id="slice" class="{{dataProgress.experience > 50 ? 'gt50':''}}">
+                <div class="pie aboutPercentClass"  [style.transform]='experienceDEG'></div>
+                <div class="{{dataProgress.experience > 50 ? 'pie fill experiencePercentClass':'hide'}}" [style.transform]='experienceDEGFill' ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="row">
+      <div id="prog-contain-div" (click)="gotoachievementpage()">
+      <div id="prog-contain-text">Your Achievements</div>
+      <div class="outer-line">
+        <div id="prog-contain">
+          <div class="hl"></div>
+          <div class="vl"></div>
+          <div class="out-line">
+            <div class="prog">
+              <div class="percent">
+                <p><span class="textp">Achievement</span><br>{{dataProgress.achievement}}%</p>
+              </div>
+              <div id="slice" class="{{dataProgress.achievement > 50 ? 'gt50':''}}">
+                <div class="pie aboutPercentClass" [style.transform]='achievementDEG'></div>
+                <div class="{{dataProgress.achievement > 50 ? 'pie fill achievementPercentClass':'hide'}}" [style.transform]='achievementDEGFill' ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div>
+      <button mat-raised-button class="generate button" (click)="redirect()">Done</button>
+  </div>
+  </div>

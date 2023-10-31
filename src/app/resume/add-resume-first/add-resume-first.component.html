@@ -1,0 +1,72 @@
+<div fxLayout="row wrap">
+    <div fxFlex.gt-sm="100%" fxFlex="100">
+        <div class="image">
+            <img src="assets/imgs/rlist1.png" class="img" /><br>
+        </div>
+
+        <mat-form-field appearance="outline">
+            <textarea matInput placeholder="jobTitle" [(ngModel)]="data.job_title" required></textarea>
+        </mat-form-field>
+        <!-- <mat-form-field appearance="outline">
+            <textarea matInput placeholder="reportingTo" [(ngModel)]="data.reporting_to"></textarea>
+        </mat-form-field> -->
+        <mat-form-field appearance="outline">
+            <textarea matInput placeholder="Function/Team" [(ngModel)]="data.team"></textarea>
+        </mat-form-field>
+        <!-- <mat-form-field appearance="outline">
+            <textarea matInput placeholder="Location" [(ngModel)]="data.location"></textarea>
+        </mat-form-field> -->
+        <mat-form-field appearance="outline">
+
+            <textarea matInput placeholder="Job Purpose/Objectives" [(ngModel)]="data.job_purpose"></textarea>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+
+            <textarea matInput placeholder="Organisation" [(ngModel)]="data.organisation"></textarea>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+
+            <textarea matInput rows="5" placeholder="Why you want to work in this industry/field?" [(ngModel)]="data.work_industry"></textarea>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+
+            <textarea matInput rows="5" placeholder="Why you want to for this organisation?" [(ngModel)]="data.work_organisation"></textarea>
+        </mat-form-field>
+        
+            <div class="first">
+                <span>Your Relevant Experience</span>
+                <mat-menu class="text-area" #menu1="matMenu" [overlapTrigger]="false"> 
+                    <div class="menuDesign">
+                      <div class="checkbox" *ngFor="let item of itemsExperienceLevel">
+                        <mat-checkbox matInput [(ngModel)]="item.showDetails" (change)="clickTypeOfYears(item)">{{ item.title }}</mat-checkbox>
+                      </div>
+                  </div>
+                  </mat-menu>
+                <button mat-raised-button class="years" [matMenuTriggerFor]="menu1" (click)="selected()">{{data.experience == '' || data.experience == null ? 'Years' : data.experience}}</button>
+            </div>
+      
+            <!-- <div class="first">
+                <span>Type of Role</span>
+                <mat-menu class="text-area" #menu2="matMenu"> 
+                    <div (click)="$event.preventDefault();" (keydown.tab)="$event.stopPropagation();" class="menuDesign">
+                      <div class="checkbox" *ngFor="let item of itemsTypeOfRole" (click)="$event.stopPropagation(); true;">
+                        <mat-checkbox matInput [(ngModel)]="item.showDetails" (change)="clickTypeOfRole(item)">{{ item.title }}</mat-checkbox>
+                      </div>
+                      <div class="input"> 
+                        <input matInput type="text" placeholder="Other" [(ngModel)]="other" (click)="$event.stopPropagation(); true;">
+                      <button mat-button mat-raised-button class="button btngreen" (click)="onDone()">Done</button>
+                    </div>
+                      <div class="row">
+                        <button mat-button mat-raised-button class="left-btn button" (click)="saveRole()">save</button>
+                        <button mat-button mat-raised-button class="right-btn button">cancel</button>
+                      </div>
+                  </div>
+                  </mat-menu>
+                <button mat-raised-button class="years bottom" [matMenuTriggerFor]="menu2" (click)="discardChangesRole()">{{data.job_type == '' || data.job_type == null ? 'Select' : data.job_type}}</button>
+            </div> -->
+
+        <div>
+            <button mat-raised-button class="next-btn pull-right mt-3 mb-2" (click)="next()">Next</button>
+        </div>
+    </div>
+</div>

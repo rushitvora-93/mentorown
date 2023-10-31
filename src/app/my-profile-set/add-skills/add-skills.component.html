@@ -1,0 +1,261 @@
+<div id="top">
+<div class="image"><img src="assets/imgs/plist2.png" class="img" /><br /></div>
+
+<mat-form-field>
+  <!-- [(ngModel)]="data.jobTitle"  -->
+  <textarea
+    matInput
+    placeholder="Describe yourself(What you are passionate about)"
+    [(ngModel)]="data.describe_yourself"
+    class="text-area"
+    maxlength="1000"
+  ></textarea>
+</mat-form-field>
+<mat-form-field class="mt-2">
+  <!-- [(ngModel)]="data.reportingTo" -->
+  <textarea
+    matInput
+    placeholder="Describe what value or strengths do you bring in the work that you do?"
+    [(ngModel)]="data.des_val_strengths"
+    class="text-area"
+    maxlength="1001"
+  ></textarea>
+</mat-form-field>
+
+<div class="table-title"><b>Technical Skills</b></div>
+
+<div class="table-title1">
+  <span class="first-span"
+    >What are your technical skills? <br />Add those most releavant for, the
+    roles you are seeking</span>
+    <div class="second-span">
+      <span class="inner-span">Your Skill Level</span>
+    </div>
+</div>
+
+<div class="table_main">
+  <div class="table_row text-grey"></div>
+  <div class="table_row text-grey text-right">Beginner</div>
+  <div class="table_row text-grey text-right">Proficient</div>
+  <div class="table_row text-grey text-right">Expert</div>
+</div>
+
+<div class="table_data" *ngFor="let item of techSkills">
+  <div class="table_row text-grey text-label row-cell">
+    <mat-form-field>
+      <textarea
+        matInput
+        placeholder="Add Skill"
+        [(ngModel)]="item.title"
+        maxlength="250"
+      ></textarea>
+      <!-- <input matInput placeholder="Add Skill" [(ngModel)]="item.skillTitle"> -->
+    </mat-form-field>
+  </div>
+  <div class="table_row radio-row">
+    <mat-radio-group class="radio-btn" aria-label="Select an option">
+      <mat-radio-button
+        (change)="radioChangeEventSkills(item, 1)"
+        checked="{{ item.levelBeginner }}"
+        [value]="1"
+      >
+      </mat-radio-button>
+      <mat-radio-button
+        (change)="radioChangeEventSkills(item, 2)"
+        checked="{{ item.levelProfi }}"
+        [value]="2"
+      >
+      </mat-radio-button>
+      <mat-radio-button
+        (change)="radioChangeEventSkills(item, 3)"
+        checked="{{ item.levelExpert }}"
+        [value]="3"
+      >
+      </mat-radio-button>
+    </mat-radio-group>
+  </div>
+</div>
+
+<div class="add-row row">
+  <div class="col-12 align">
+    <button mat-raised-button class="add-row-1" (click)="addMoreSkills()">
+      <mat-icon>add</mat-icon>Add More
+    </button>
+    <button mat-raised-button class="add-row-1" (click)="DeleteSkill()">
+      <mat-icon>delete</mat-icon>Delete
+    </button>
+  </div>
+</div>
+
+<hr class="hr" />
+
+<div class="table-title"><b>Industry/Functional Knowledge</b></div>
+
+<div class="table-title1">
+  <span class="first-span"
+    >Your relevant non-technical <br />skills or obilities, professional or
+    industry knowledge</span>
+  <div class="second-span">
+    <span class="inner-span">Your Skill Level</span>
+  </div>
+</div>
+
+<div class="table_main">
+  <div class="table_row text-grey"></div>
+  <div class="table_row text-grey text-right">Beginner</div>
+  <div class="table_row text-grey text-right">Proficient</div>
+  <div class="table_row text-grey text-right">Expert</div>
+</div>
+
+<div class="table_data" *ngFor="let item of industry">
+  <div class="table_row text-grey text-label row-cell">
+    <mat-form-field>
+      <textarea
+        matInput
+        placeholder="Add Knowledge"
+        [(ngModel)]="item.title"
+        maxlength="250"
+      ></textarea>
+      <!-- <input matInput placeholder="Add Skill"> -->
+    </mat-form-field>
+  </div>
+  <div class="table_row radio-row">
+    <mat-radio-group class="radio-btn" aria-label="Select an option">
+      <mat-radio-button
+        (change)="radioChangeEventindustry(item, 1)"
+        checked="{{ item.levelBeginner }}"
+        [value]="1"
+      >
+      </mat-radio-button>
+      <mat-radio-button
+        (change)="radioChangeEventindustry(item, 2)"
+        checked="{{ item.levelProfi }}"
+        [value]="2"
+      >
+      </mat-radio-button>
+      <mat-radio-button
+        (change)="radioChangeEventindustry(item, 3)"
+        checked="{{ item.levelExpert }}"
+        [value]="3"
+      >
+      </mat-radio-button>
+    </mat-radio-group>
+  </div>
+</div>
+<div class="add-row row">
+  <div class="col-12 align">
+    <button mat-raised-button class="add-row-1" (click)="addMoreIndustry()">
+      <mat-icon>add</mat-icon>Add More
+    </button>
+    <button mat-raised-button class="add-row-1" (click)="DeleteIndustry()">
+      <mat-icon>delete</mat-icon>Delete
+    </button>
+  </div>
+</div>
+
+<hr class="hr" />
+
+<div class="table-title"><b>Language</b></div>
+
+<div class="table-title1">
+  <span class="first-span">Add your language skills and capabilities here</span>
+  <div class="second-span">
+    <span class="inner-span">Your Skill Level</span>
+  </div>
+</div>
+
+<div class="table_main">
+  <div class="table_row_lang text-grey"></div>
+  <div class="table_row_lang text-grey text-right">Basic</div>
+  <div class="table_row_lang text-grey text-right">Working</div>
+  <div class="table_row_lang text-grey text-right">Fluent</div>
+</div>
+
+<div class="table_data" *ngFor="let item of language">
+  <div class="table_row text-grey text-label row-cell">
+    <mat-form-field>
+      <textarea
+        matInput
+        placeholder="Add Language"
+        [(ngModel)]="item.title"
+        maxlength="250"
+      ></textarea>
+      <!-- <input matInput placeholder="Add Skill"> -->
+    </mat-form-field>
+  </div>
+  <div class="table_row radio-row">
+    <mat-radio-group class="radio-btn" aria-label="Select an option">
+      <mat-radio-button
+        (change)="radioChangeEventLanguage(item, 1)"
+        checked="{{ item.levelBeginner }}"
+        [value]="1"
+      >
+      </mat-radio-button>
+      <mat-radio-button
+        (change)="radioChangeEventLanguage(item, 2)"
+        checked="{{ item.levelProfi }}"
+        [value]="2"
+      >
+      </mat-radio-button>
+      <mat-radio-button
+        (change)="radioChangeEventLanguage(item, 3)"
+        checked="{{ item.levelExpert }}"
+        [value]="3"
+      >
+      </mat-radio-button>
+    </mat-radio-group>
+  </div>
+</div>
+<div class="add-row row">
+  <div class="col-12 align">
+    <button mat-raised-button class="add-row-1" (click)="addMoreLanguage()">
+      <mat-icon>add</mat-icon>Add More
+    </button>
+    <button mat-raised-button class="add-row-1" (click)="DeleteLanguage()">
+      <mat-icon>delete</mat-icon>Delete
+    </button>
+  </div>
+</div>
+
+<hr class="hr" />
+
+<div class="table-title"><b>Qualification</b></div>
+
+<div class="table_data" *ngFor="let item of qualification">
+  <div class="table_row text-grey text-label-qual row-cell">
+    <mat-form-field class="example-full-width">
+      <textarea
+        matInput
+        placeholder="Add Qualification"
+        [(ngModel)]="item.title"
+        maxlength="250"
+      ></textarea>
+      <!-- <input matInput placeholder="Add Skill"> -->
+    </mat-form-field>
+  </div>
+</div>
+<div class="add-row row">
+  <div class="col-12 align">
+    <button
+      mat-raised-button
+      class="add-row-1"
+      (click)="addMoreQualification()"
+    >
+      <mat-icon>add</mat-icon>Add More
+    </button>
+    <button mat-raised-button class="add-row-1" (click)="DeleteQualification()">
+      <mat-icon>delete</mat-icon>Delete
+    </button>
+  </div>
+</div>
+
+<div class="row">
+  <button mat-raised-button class="back-btn" (click)="back()">Previous</button>
+  <button mat-raised-button class="next-btn mt-3 mb-2" (click)="next()">
+    Next
+  </button>
+</div>
+<div>
+  <button mat-raised-button class="generate button" (click)="redirect()">Done</button>
+</div>
+</div>

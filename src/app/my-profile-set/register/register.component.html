@@ -1,0 +1,24 @@
+<div fxLayout="row wrap">
+<h2>Create New User</h2>
+      <mat-form-field appearance="outline">
+        <input matInput placeholder="First name" [(ngModel)]="registerdata.first_name"/>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <input matInput placeholder="Last name" [(ngModel)]="registerdata.last_name"/>
+      </mat-form-field>
+      <mat-form-field  appearance="outline">
+        <input matInput placeholder="Email" [(ngModel)]="registerdata.email"/>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <input type="password" matInput placeholder="Password" [(ngModel)]="registerdata.password"/>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <input type="password" matInput placeholder="Confirm Password" [(ngModel)]="confirmPassword"/>
+      </mat-form-field>
+       
+      <div>
+        <button mat-raised-button class="Button pull-right mt-3 mb-2" (click)="register()">Create New User</button>
+      </div>
+    
+    </div>
+

@@ -1,0 +1,40 @@
+mat-card-title h2{
+    font-size: 25px;
+    text-align: center;
+    color: #7BC0BB;
+}
+mat-card.box{
+    position: absolute;
+    top:145px;
+    
+    /* background-color: salmon; */
+}
+button.btn-block{
+    width :30% !important;
+    margin-left:143px;
+    margin-bottom: 21px;
+}
+
+.mat-card-header-text{
+	width:100%;
+}
+.login{
+    background-color: #7BC0BB !important;
+    color: white;
+}
+.mat-card{
+    box-shadow: 5px 5px 5px 5px #7BC0BB !important;
+}
+.header_login{
+    height:64px;
+    width:100%;
+    background-color: #7BC0BB;
+}
+.dark-logo{
+    width: 50px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    margin-left: 49%;
+    margin-right: 49%;
+}
+  

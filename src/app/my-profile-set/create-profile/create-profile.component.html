@@ -1,0 +1,47 @@
+ <div fxLayout="row wrap">
+    <div fxFlex.gt-sm="100%" fxFlex="100">
+      <div class="image">
+        <img src="assets/imgs/plist1.png" class="img"/><br>
+        
+      </div>
+      <div class="profile" title="Select Profile picture">
+        <label for="photo">
+          <img src = "assets/imgs/profile-male.png" [ngClass]="{'photo': url , 'logo': !url }" *ngIf="image == ''"> 
+          <div *ngIf="image != ''">
+            <img [src]="image" class="photo" *ngIf="image != ''" />
+          </div>
+        </label> 
+        <label  for="photo">
+          <mat-icon [ngClass]="{'photo-appearance': image , 'appearance': !image }">photo_camera</mat-icon>
+        </label>
+      </div>
+      <!-- (change)="onSelectFile($event)" -->
+      <input matImage type='file' class="visibility" id="photo" (change)="onSelectFile($event)">
+      <mat-form-field  appearance="outline">
+        <input matInput placeholder="Email" [(ngModel)]="data.alternateEmail"/>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <input matInput placeholder="First name" [(ngModel)]="data.first_name"/>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <input matInput placeholder="Last name" [(ngModel)]="data.last_name"/>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <input type="text" matInput placeholder="Phone no" [(ngModel)]="data.phone"/>
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <input matInput placeholder="Address" [(ngModel)]="data.address"/>
+      </mat-form-field>
+      <mat-checkbox [(ngModel)]="data.notify">
+        <mat-label>Notify me of any roles that match my profile</mat-label>
+      </mat-checkbox>
+       
+      <div>
+        <button mat-raised-button class="next-btn pull-right mt-3 mb-2" (click)="next()">Next</button>
+      </div>
+    
+    </div>
+    <div class="last">
+      <button mat-raised-button class="generate button" (click)="redirect()">Done</button>
+  </div>
+  </div>

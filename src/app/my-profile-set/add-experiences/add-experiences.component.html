@@ -1,0 +1,40 @@
+<div class="image">
+    <img src="assets/imgs/plist4.png" class="img"/><br>
+</div>
+<mat-card >
+    <mat-card-content class="main">
+         <b>Experience</b>
+         <div class="main-data">
+            <div *ngFor="let item of data.experience; let i = index">
+              <div class="title-wrapper">
+                <div class="pencil">
+                  <img class="edit_img" src="assets/imgs/pencil.png" (click)="goto_exp_desc(item.id)">
+                  <mat-icon color="warn" class="delete" (click)="openDialog(i)">delete</mat-icon>
+                </div>
+                <div>
+                  <h4>{{item.title}}</h4>
+                </div>
+              </div>
+              <div class="one">{{item.company}}</div>
+              <div class="one grey">{{item.startMonthYear}} - {{ item.currentlyWorking ? ' Present '  : item.endMonthYear}}</div>
+              <div class="one grey">{{item.location}}</div>
+              <div class="one desc" id="expanded">{{item.description}}</div>
+              <hr>
+            </div>
+          </div>
+    </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-content >
+      <div (click)="experience()">
+          <img class="plus" src="assets/imgs/plus.png"><b> Add another</b>
+      </div>
+  </mat-card-content>
+</mat-card>
+<div class="row">
+    <button mat-raised-button class="back-btn" (click)="back()">Previous</button>
+    <button mat-raised-button class="next-btn mt-3 mb-2" (click)="next()">Next</button>
+</div>
+<div>
+  <button mat-raised-button class="generate button" (click)="redirect()">Done</button>
+</div>

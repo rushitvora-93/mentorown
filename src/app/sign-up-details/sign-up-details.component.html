@@ -1,0 +1,37 @@
+<div fxLayout="row wrap">
+    <div fxFlex.gt-sm="100%" fxFlex="100">
+      <!-- <div class="profile">
+        <img src="assets/imgs/profile-male.png" class="logo">
+      </div> -->
+      <div class="profile" title="Select Profile picture">
+        <label for="photo">
+          <img src = "assets/imgs/profile-male.png" [ngClass]="{'photo': url , 'logo': !url }" *ngIf="image == ''"> 
+          <div *ngIf="image != ''">
+            <img [src]="image" class="photo" *ngIf="image != ''" />
+          </div>
+        </label> 
+        <label  for="photo">
+          <mat-icon [ngClass]="{'photo-appearance': image , 'appearance': !image }">photo_camera</mat-icon>
+        </label>
+      </div>
+      <input matImage type='file' class="visibility" id="photo" (change)="onSelectFile($event)">
+      <mat-form-field  appearance="outline">
+        <input matInput placeholder="Email" [(ngModel)]="loginData.email">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <input matInput placeholder="First name" [(ngModel)]="loginData.first_name">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <input matInput placeholder="Last name" [(ngModel)]="loginData.last_name">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <input matInput placeholder="Phone no" [(ngModel)]="loginData.phone">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <textarea matInput placeholder="Address" rows="6" [(ngModel)]="loginData.address"></textarea>
+      </mat-form-field>
+       
+      <button class="profile_btn_border" (click)="changePassword()">Change My Password</button>
+      <button class="profile_btn" (click)="save()">Save</button>
+    </div>
+  </div>

@@ -1,0 +1,37 @@
+<!-- <my-lib [name]="'kedar'"></my-lib> -->
+
+<div class="header_login">
+  <img src="assets/imgs/om_resume_logo.jpg" alt="homepage" class="dark-logo">
+</div>
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+  <mat-card class="box">
+    <mat-card-header>
+      <mat-card-title>
+        <h2>Login</h2>
+      </mat-card-title>
+    </mat-card-header>
+    <form class="example-form" name="loginForm" [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)" novalidate>
+      <mat-card-content>
+        <mat-form-field class="example-full-width">
+          <input matInput formControlName = "email" placeholder="Username" autocomplete="off">
+          <mat-error *ngIf="loginFormErrors.email.required">
+            Email is required
+          </mat-error>
+          <mat-error *ngIf="!loginFormErrors.email.required && loginFormErrors.email.email">
+            Please enter a valid email address
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <input matInput formControlName = "password"  type="password" placeholder="Password" autocomplete="off">
+          <mat-error *ngIf="loginFormErrors.password.required">
+                        password is required
+                    </mat-error>
+        </mat-form-field>
+      </mat-card-content>
+
+      <button mat-stroked-button class="btn-block login">Login</button>
+
+    </form>
+  </mat-card>
+</div>

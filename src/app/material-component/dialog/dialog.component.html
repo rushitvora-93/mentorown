@@ -1,0 +1,17 @@
+<mat-dialog-content class="size">
+    <mat-form-field  appearance="outline" >
+        <div>
+            <input matInput placeholder="Enter email" id="email" [(ngModel)]="selected_email"/>
+            <mat-select name="email" [(ngModel)]="selected_email">
+                <mat-option *ngFor="let item of users" [value]="email" (click)="selected(item.email)">
+                    {{item.email}}
+                </mat-option>
+            </mat-select>
+        </div>
+    </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <div class="buttons">
+        <button mat-raised-button class="color" (click)="ok()">Share Resume</button>
+    </div>
+</mat-dialog-actions>

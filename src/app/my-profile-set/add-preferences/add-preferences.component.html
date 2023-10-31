@@ -1,0 +1,468 @@
+<div id="top">
+<div class="image"><img src="assets/imgs/plist3.png" class="img" /><br /></div>
+<div class="title">
+  <mat-label class="new_job_main_title">
+    Select the desired decision making style
+  </mat-label>
+</div>
+<div class="main_div">
+  <div class="div_set">
+    <div
+      class="either_div"
+      (click)="toggleFE()"
+      [ngClass]="{ active: FActive == 1 }"
+    >
+      Independent
+    </div>
+  </div>
+
+  <div class="div_set">
+    <div
+      class="either_div even"
+      (click)="toggleFN()"
+      [ngClass]="{ active: FActive == 2 }"
+    >
+      With others
+    </div>
+  </div>
+</div>
+
+<div class="main_div">
+  <div class="div_set">
+    <div
+      class="either_div"
+      (click)="toggleSE()"
+      [ngClass]="{ active: SActive == 1 }"
+    >
+      Fact based, strong analytics
+    </div>
+  </div>
+  <div class="div_set">
+    <div
+      class="either_div even"
+      (click)="toggleSN()"
+      [ngClass]="{ active: SActive == 2 }"
+    >
+      Fast is most important
+    </div>
+  </div>
+</div>
+
+<div class="main_div">
+  <div class="div_set">
+    <div
+      class="either_div"
+      (click)="toggleTE()"
+      [ngClass]="{ active: TActive == 1 }"
+    >
+      According to rules/ process
+    </div>
+  </div>
+  <div class="div_set">
+    <div
+      class="either_div even"
+      (click)="toggleTN()"
+      [ngClass]="{ active: TActive == 2 }"
+    >
+      Weigh options, find optimal solutions
+    </div>
+  </div>
+</div>
+
+<mat-label class="new_job_main_title">
+  Select the desired communication style
+</mat-label>
+
+<div class="table_main">
+  <div class="table_row text-grey"></div>
+  <div class="table_row text-grey text-left">Least like me</div>
+  <div class="table_row text-grey text-right">Most like me</div>
+</div>
+<div class="table_data">
+  <div class="table_row text-grey text-label row-cell">
+    Direct, fast, fact based
+  </div>
+  <div class="table_row">
+    <mat-slider
+      class="mat-slider-tick"
+      (change)="rangeChangeEvent($event, 1)"
+      min="0"
+      max="4"
+      step="1"
+      [(ngModel)]="directRangeAttitude"
+      snaps="true"
+      class="rang_color slider"
+      color="primary"
+    >
+    </mat-slider>
+  </div>
+</div>
+<div class="table_data">
+  <div class="table_row text-grey text-label row-cell">Results focused</div>
+  <div class="table_row">
+    <mat-slider
+      (change)="rangeChangeEvent($event, 2)"
+      min="0"
+      max="4"
+      step="1"
+      [(ngModel)]="resultsRangeAttitude"
+      snaps="true"
+      class="rang_color slider"
+      color="primary"
+    >
+    </mat-slider>
+  </div>
+</div>
+<div class="table_data">
+  <div class="table_row text-grey text-label row-cell">
+    Inspiring and motivating
+  </div>
+  <div class="table_row">
+    <mat-slider
+      (change)="rangeChangeEvent($event, 3)"
+      min="0"
+      max="4"
+      step="1"
+      [(ngModel)]="inspiringRangeAttitude"
+      snaps="true"
+      class="rang_color slider"
+      color="primary"
+    >
+    </mat-slider>
+  </div>
+</div>
+<div class="table_data">
+  <div class="table_row text-grey text-label row-cell">
+    Consulting
+  </div>
+  <div class="table_row">
+    <mat-slider
+      (change)="rangeChangeEvent($event, 4)"
+      min="0"
+      max="4"
+      step="1"
+      [(ngModel)]="balancedRangeAttitude"
+      snaps="true"
+      class="rang_color slider"
+      color="primary"
+    >
+    </mat-slider>
+  </div>
+</div>
+<div class="table_data">
+  <div class="table_row text-grey text-label row-cell">
+    Considerate of others perspectives
+  </div>
+  <div class="table_row">
+    <mat-slider
+      (change)="rangeChangeEvent($event, 5)"
+      min="0"
+      max="4"
+      step="1"
+      [(ngModel)]="perspectiveRangeAttitude"
+      step="1"
+      snaps="true"
+      class="rang_color slider"
+      color="primary"
+    >
+    </mat-slider>
+  </div>
+</div>
+<div class="table_data">
+  <div class="table_row text-label text-grey row-cell">
+    Focused, keeping to the subject
+  </div>
+  <div class="table_row">
+    <mat-slider
+      (change)="rangeChangeEvent($event, 6)"
+      min="0"
+      max="4"
+      step="1"
+      [(ngModel)]="focusedRangeAttitude"
+      snaps="true"
+      class="rang_color slider"
+      color="primary"
+    >
+    </mat-slider>
+  </div>
+</div>
+
+<mat-label class="new_job_main_title">
+  What do you enjoy most at work?</mat-label
+>
+
+<div class="preference_home_row">
+  <!-- <div class="table_row text-grey text-right">Not important</div>
+        <div class="table_row text-grey text-right">Same what important</div>
+        <div class="table_row text-grey text-right right-most">Highly Important</div> -->
+  <div class="notsaprat">Dislike</div>
+  <div class="saprat">|</div>
+  <div class="notsaprat">Don't mind it</div>
+  <div class="saprat">|</div>
+  <div class="notsaprat">Enjoy</div>
+</div>
+<br />
+<div>
+  <div>Repetitive routines and processes</div>
+  <div>
+    <mat-slider
+      (change)="enjoyRangeChangeEvent($event, 1)"
+      min="0"
+      max="2"
+      step="1"
+      [(ngModel)]="repetitveRangeAttitude"
+      snaps="true"
+      class="rang_color slider"
+      color="primary"
+    >
+    </mat-slider>
+  </div>
+</div>
+<div>
+  <div>Systematic and detailed planning</div>
+  <div>
+    <mat-slider
+      (change)="enjoyRangeChangeEvent($event, 2)"
+      min="0"
+      max="2"
+      step="1"
+      [(ngModel)]="symanticRangeAttitude"
+      snaps="true"
+      class="rang_color slider"
+      color="primary"
+    >
+    </mat-slider>
+  </div>
+</div>
+<div>
+  <div>Big picture, minimal instructions</div>
+  <div>
+    <mat-slider
+      (change)="enjoyRangeChangeEvent($event, 3)"
+      min="0"
+      max="2"
+      step="1"
+      [(ngModel)]="bigpictureRangeAttitude"
+      snaps="true"
+      class="rang_color slider"
+      color="primary"
+    >
+    </mat-slider>
+  </div>
+</div>
+<div>
+  <div>Results come first before everything</div>
+  <div>
+    <mat-slider
+      (change)="enjoyRangeChangeEvent($event, 4)"
+      min="0"
+      max="2"
+      step="1"
+      [(ngModel)]="firstresultRangeAttitude"
+      snaps="true"
+      class="rang_color slider"
+      color="primary"
+    >
+    </mat-slider>
+  </div>
+</div>
+<div>
+  <div>Maintaining multiple relationships</div>
+  <div>
+    <mat-slider
+      (change)="enjoyRangeChangeEvent($event, 5)"
+      min="0"
+      max="2"
+      [(ngModel)]="maintainRangeAttitude"
+      step="1"
+      snaps="true"
+      class="rang_color slider"
+      color="primary"
+    >
+    </mat-slider>
+  </div>
+</div>
+<div>
+  <div>Creativity in finding new solutions</div>
+  <div>
+    <mat-slider
+      (change)="enjoyRangeChangeEvent($event, 6)"
+      min="0"
+      max="2"
+      step="1"
+      [(ngModel)]="creativityRangeAttitude"
+      snaps="true"
+      class="rang_color slider"
+      color="primary"
+    >
+    </mat-slider>
+  </div>
+</div>
+<div>
+  <div>Being positive and optimistic</div>
+  <div>
+    <mat-slider
+      (change)="enjoyRangeChangeEvent($event, 7)"
+      min="0"
+      max="2"
+      step="1"
+      [(ngModel)]="beingRangeAttitude"
+      snaps="true"
+      class="rang_color slider"
+      color="primary"
+    >
+    </mat-slider>
+  </div>
+</div>
+<div>
+  <div>Helping and guiding others</div>
+  <div>
+    <mat-slider
+      (change)="enjoyRangeChangeEvent($event, 8)"
+      min="0"
+      max="2"
+      step="1"
+      [(ngModel)]="helpingRangeAttitude"
+      snaps="true"
+      class="rang_color slider"
+      color="primary"
+    >
+    </mat-slider>
+  </div>
+</div>
+
+<div class="title">
+  <mat-label class="new_job_main_title">
+    What motivates you most at work?
+  </mat-label>
+</div>
+<div class="main_div">
+  <div class="div_set">
+    <div
+      class="either_div"
+      (click)="toggleFirstE()"
+      [ngClass]="{ active: firstActive == 1 }"
+    >
+      Risk taking<br />
+      confortable<br />
+      with ambiguity
+    </div>
+  </div>
+
+  <div class="div_set">
+    <div
+      class="either_div even"
+      (click)="toggleFirstN()"
+      [ngClass]="{ active: firstActive == 2 }"
+    >
+      Stability<br />
+      and <br />security
+    </div>
+  </div>
+</div>
+
+<div class="main_div">
+  <div class="div_set">
+    <div
+      class="either_div"
+      (click)="toggleSecondE()"
+      [ngClass]="{ active: secondActive == 1 }"
+    >
+      Specialist,<br />
+      subject matter<br />
+      expert
+    </div>
+  </div>
+  <div class="div_set">
+    <div
+      class="either_div even"
+      (click)="toggleSecondN()"
+      [ngClass]="{ active: secondActive == 2 }"
+    >
+      Working as<br />part of a<br />team
+    </div>
+  </div>
+</div>
+
+<div class="main_div">
+  <div class="div_set">
+    <div
+      class="either_div"
+      (click)="toggleThirdE()"
+      [ngClass]="{ active: thirdActive == 1 }"
+    >
+      Independent,<br />
+      self<br />
+      motivation
+    </div>
+  </div>
+  <div class="div_set">
+    <div
+      class="either_div even"
+      (click)="toggleThirdN()"
+      [ngClass]="{ active: thirdActive == 2 }"
+    >
+      Positive,<br />
+      encouraging<br />
+      atmosphere
+    </div>
+  </div>
+</div>
+
+<div class="main_div">
+  <div class="div_set">
+    <div
+      class="either_div"
+      (click)="toggleFourthE()"
+      [ngClass]="{ active: fourthActive == 1 }"
+    >
+      Promotion,<br />and career<br />
+      growth
+    </div>
+  </div>
+  <div class="div_set">
+    <div
+      class="either_div even"
+      (click)="toggleFourthN()"
+      [ngClass]="{ active: fourthActive == 2 }"
+    >
+      Recognition <br />and<br />achievements
+    </div>
+  </div>
+</div>
+
+<div class="main_div">
+  <div class="div_set">
+    <div
+      class="either_div"
+      (click)="toggleFifthE()"
+      [ngClass]="{ active: fifthActive == 1 }"
+    >
+      Autonomous<br />
+      and self<br />
+      directed
+    </div>
+  </div>
+  <div class="div_set">
+    <div
+      class="either_div even"
+      (click)="toggleFifthN()"
+      [ngClass]="{ active: fifthActive == 2 }"
+    >
+      Clear,<br />
+      direction and<br />
+      support
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <button mat-raised-button class="back-btn" (click)="back()">Previous</button>
+  <button mat-raised-button class="next-btn mt-3 mb-2" (click)="next()">
+    Next
+  </button>
+</div>
+<div>
+  <button mat-raised-button class="generate button" (click)="redirect()">Done</button>
+</div>
+</div>

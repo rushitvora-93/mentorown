@@ -1,0 +1,9 @@
+.color{
+    background-color: #7BC0BB;
+}
+.size{
+    width:400px;
+}
+.one{
+    display: flex;
+}

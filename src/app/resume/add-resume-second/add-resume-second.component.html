@@ -1,0 +1,113 @@
+<div fxLayout="row wrap">
+    <div fxFlex.gt-sm="100%" fxFlex="100">
+        <div class="image">
+            <img src="assets/imgs/rlist2.png" class="img" /><br>
+        </div>
+    </div>
+
+    <div class="first margin">
+        <span class="span_text">Select which competencies are most important in this role (max 3)</span>
+        <mat-menu class="text-area" #menu1="matMenu"> 
+            <div (click)="$event.preventDefault();" (keydown.tab)="$event.stopPropagation();" class="menuDesign">
+              <div class="checkbox" *ngFor="let item of itemsCompetencies" (click)="$event.stopPropagation(); true;">
+                <mat-checkbox matInput [(ngModel)]="item.showDetails" (change)="clickTypeOfCompetencies(item)">{{ item.title }}</mat-checkbox>
+              </div>
+              <div class="row">
+                <button mat-button mat-raised-button class="left-btn button" (click)="saveCompetencies()">save</button>
+                <button mat-button mat-raised-button class="right-btn button">cancel</button>
+              </div>
+          </div>
+          </mat-menu>
+          <div class="button_align">
+            <button mat-raised-button class="btn years" [matMenuTriggerFor]="menu1" (click)="discardChangesCompe()">{{data.competencies == '' || data.competencies == null ? 'Select' : data.competencies}}</button>
+          </div>
+    </div>
+
+    <div class="first">
+        <span class="span_text">Select which of your technical skills are most relevant</span>
+        <mat-menu class="text-area" #menu2="matMenu"> 
+            <div (click)="$event.preventDefault();" (keydown.tab)="$event.stopPropagation();" class="menuDesign">
+              <div class="checkbox" *ngFor="let item of itemTechSkill" (click)="$event.stopPropagation(); true;">
+                <mat-checkbox matInput [(ngModel)]="item.showDetails" (change)="clickTechnicalSkill(item)">{{ item.title }}</mat-checkbox>
+              </div>
+              <div class="row">
+                <button mat-button mat-raised-button class="left-btn button" (click)="saveTechSkills()">save</button>
+                <button mat-button mat-raised-button class="right-btn button">cancel</button>
+              </div>
+          </div>
+          </mat-menu>
+          <div class="button_align">
+            <button mat-raised-button class="btn years"  [matMenuTriggerFor]="menu2" (click)="discardChangestechSkill()">{{data.technical_skills_data == '' || data.technical_skills_data == null ? 'Select' : data.technical_skills_data}}</button>
+          </div>
+    </div>
+
+    <div class="first">
+        <span class="span_text">Select which of your industry skills are most relevant</span>
+        <mat-menu class="text-area" #menu3="matMenu"> 
+            <div (click)="$event.preventDefault();" (keydown.tab)="$event.stopPropagation();" class="menuDesign">
+              <div class="checkbox" *ngFor="let item of itemIndustry" (click)="$event.stopPropagation(); true;">
+                <mat-checkbox matInput [(ngModel)]="item.showDetails" (change)="clickIndustry(item)">{{ item.title }}</mat-checkbox>
+              </div>
+              <div class="row">
+                <button mat-button mat-raised-button class="left-btn button" (click)="saveIndustry()">save</button>
+                <button mat-button mat-raised-button class="right-btn button">cancel</button>
+              </div>
+          </div>
+          </mat-menu>
+          <div class="button_align">
+            <button mat-raised-button class="btn years" [matMenuTriggerFor]="menu3" (click)="discardChangesIndustry()">{{data.industry_skills_data == '' || data.industry_skills_data == null ? 'Select' : data.industry_skills_data}}</button>
+          </div>
+    </div>
+
+    <div class="first">
+        <span class="span_text">Select which of your language skills are most relevant</span>
+        <mat-menu class="text-area" #menu4="matMenu"> 
+            <div (click)="$event.preventDefault();" (keydown.tab)="$event.stopPropagation();" class="menuDesign">
+              <div class="checkbox" *ngFor="let item of itemLanguage" (click)="$event.stopPropagation(); true;">
+                <mat-checkbox matInput [(ngModel)]="item.showDetails" (change)="clickLanguage(item)">{{ item.title }}</mat-checkbox>
+              </div>
+              <div class="row">
+                <button mat-button mat-raised-button class="left-btn button" (click)="saveLanguage()">save</button>
+                <button mat-button mat-raised-button class="right-btn button">cancel</button>
+              </div>
+          </div>
+          </mat-menu>
+          <div class="button_align">        
+            <button mat-raised-button class="btn years"  [matMenuTriggerFor]="menu4" (click)="discardChangesLanguage()">{{data.language_skills_data == '' || data.language_skills_data == null ? 'Select' : data.language_skills_data}}</button>
+          </div>
+    </div>
+
+    <div class="first">
+        <span class="span_text">Select which of your qualifications are most relevant</span>
+        <mat-menu class="text-area" #menu5="matMenu"> 
+            <div (click)="$event.preventDefault();" (keydown.tab)="$event.stopPropagation();" class="menuDesign">
+              <div class="checkbox" *ngFor="let item of itemQualification" (click)="$event.stopPropagation(); true;">
+                <mat-checkbox matInput [(ngModel)]="item.showDetails" (change)="clickQualification(item)">{{ item.title }}</mat-checkbox>
+              </div>
+              <div class="row">
+                <button mat-button mat-raised-button class="left-btn button" (click)="saveQualification()">save</button>
+                <button mat-button mat-raised-button class="right-btn button">cancel</button>
+              </div>
+          </div>
+          </mat-menu>
+          <div class="button_align"> 
+            <button mat-raised-button class="btn years"  [matMenuTriggerFor]="menu5" (click)="discardChangesQual()">{{data.qualifications_data == '' || data.qualifications_data == null ? 'Select' : data.qualifications_data}}</button>
+          </div>
+    </div>
+
+    <mat-form-field appearance="outline">
+        <!-- [(ngModel)]="data.location" -->
+        <textarea matInput rows="5" 
+            placeholder="Describe what is most important to you about this role (include what will be your main objective when in this role or what your purpose will be, or what you results you can achieve in this role)?"
+            [(ngModel)]="data.description"></textarea>
+    </mat-form-field>
+
+    <div class="two">
+        <button mat-raised-button class="previous back-btn" (click)="previous()">Previous</button>
+        <button mat-raised-button class="save next-btn" (click)="newReport()">Save</button>
+    </div>
+
+    <div class="last">
+        <button mat-raised-button class="generate button" (click)="newReport()"><mat-icon class="icon">cloud_download</mat-icon>Save & Generate</button>
+    </div>
+</div>

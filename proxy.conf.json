@@ -1,0 +1,8 @@
+{
+    "/api/*": {
+      "target": "http://owmmentor.nolimitstalent.com/",
+      "secure": false,
+      "logLevel": "debug",
+      "changeOrigin": true
+    }
+  }

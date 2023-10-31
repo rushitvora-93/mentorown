@@ -1,0 +1,93 @@
+.first{
+    margin-bottom: 30px;
+    display: flex;
+}
+.next-btn{
+    margin-top:15px;
+    margin-bottom:15px;
+    text-align: center;
+    border: 1px solid #7BC0BB;
+    box-shadow: none;
+    float: right;
+  }
+  .back-btn{
+    margin-top:15px;
+    margin-bottom:15px;
+    text-align: center;
+    border: 1px solid #7BC0BB;
+    box-shadow: none;
+  }
+.margin{
+    margin-top: 20px;
+}
+
+.years {
+    margin-left:30px;
+    background-color: #7BC0BB;
+    border: 1px solid #7BC0BB;
+    color:black;
+    font-weight: 300;
+    border-radius: 15px;
+    float: right;
+    white-space: normal;
+    word-break: break-word;
+  }
+
+  .img{
+    width: 100%;
+  }
+
+  .first > span{
+    font-weight: 500;
+  }
+
+  .icon{
+      margin-right: 5px;
+  }
+
+  .save{
+      float: right;
+      margin-right: 10px;
+  }
+
+  .two{
+      margin-bottom: 20px;
+  }
+
+  .generate{
+      width: 100%;
+  }
+  .button{
+    background-color:#7BC0BB;
+    color:white;
+  }
+  .text-area{
+    background-color: white;
+    padding:5px 5px 5px 5px;
+    width:100%;
+    border-bottom:none;
+}
+.menuDesign{
+  width:100%;
+  padding:0px 10px 0px 10px;
+  max-height: 160px;
+}
+.checkbox{
+  background-color: white;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  padding:5px 5px 5px 5px;
+}
+.right-btn{
+  margin-left:20px;   
+}
+.row {
+  margin: 0 10px 15px 10px;
+}
+.span_text{
+  width:50%;
+}
+.button_align{
+  width:50%;
+  display: inline;
+}

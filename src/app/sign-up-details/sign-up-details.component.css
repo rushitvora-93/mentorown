@@ -1,0 +1,72 @@
+.logo{
+    width:80px;
+    height:80px;
+    padding-left: 9px;
+    padding-top: 10px;
+  }
+  .profile_btn{
+    margin-bottom: 10px;
+    background: #7BC0BB;
+    height: 35px;
+    width: 100px;
+    border-radius: 5px;
+    color: #000;
+    font-size: 16px;
+    border: 1px solid #7BC0BB;
+}
+.profile_btn{
+    background: #7BC0BB;
+    height: 35px;
+    width: 100%;
+    border-radius: 5px;
+    color: #fff;
+    border: 1px solid #7BC0BB;
+}
+  .profile_btn_border{
+    border:1px solid #7BC0BB;
+    height: 35px;
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    background: #fff;
+}
+.profile{
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    overflow: hidden;
+    margin-bottom: 18px;
+    border: 5px solid #C9E4E2;
+    border-radius: 67px;
+    background: #C9E4E2;
+   } 
+   .logo{
+    width:80px;
+    height:80px;
+    padding-left: 9px;
+    padding-top: 10px;
+  }
+  .photo{
+   width: 100px;
+   height: 133px;
+   padding-right: 8px;
+  }
+  .appearance{
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    margin-top: 67px;
+    margin-left: -10px;
+    color: #7BC0BB;
+  }
+  .photo-appearance{
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    margin-top: -72px;
+    margin-left: 70px;
+    color: #7BC0BB;
+  }
+  .visibility{
+    visibility: hidden;
+  }

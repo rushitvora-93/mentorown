@@ -1,0 +1,37 @@
+<div class="image">
+    <img src="assets/imgs/plist5.png" class="img"/><br>
+</div>
+<mat-card *ngFor="let item of data.achievements; let i = index">
+    <mat-card-content class="background_content">
+        <div>   
+            <div class="row line">
+                <div class="left col-6">
+                    <h4>{{item.title}}</h4>
+                </div>
+                <div class="right col-6">
+                    <img class="edit_img" src="assets/imgs/pencil.png" (click)="goto_Achieve_desc(item.id)">
+                    <mat-icon color="warn" class="delete" (click)="openDialog(i)">delete</mat-icon>
+                </div>
+              </div>
+                <div class="row line">
+                <div class="col-12">
+                    <div class="one">{{item.role}}</div>
+                </div>
+              </div>
+        </div>
+    </mat-card-content> 
+</mat-card> 
+    <mat-card>
+        <mat-card-content >
+            <div (click)="achievement()">
+                <img class="plus" src="assets/imgs/plus.png"><b>  Add another</b>
+            </div>
+        </mat-card-content>
+    </mat-card>
+<div class="row">
+    <button mat-raised-button class="back-btn" (click)="back()">Previous</button>
+    <button mat-raised-button class="next-btn mt-3 mb-2" (click)="save()">Save</button>
+</div>
+<div>
+    <button mat-raised-button class="generate button" (click)="redirect()">Done</button>
+</div>

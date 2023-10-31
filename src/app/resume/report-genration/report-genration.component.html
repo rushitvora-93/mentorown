@@ -1,0 +1,106 @@
+<div fxLayout="row wrap">
+    <div fxFlex.gt-sm="100%" fxFlex="100">
+        <div class="image">
+            <img src="assets/imgs/rlist3.png" class="img" /><br>
+        </div>
+    </div>
+
+    <mat-form-field appearance="outline">
+        <textarea matInput placeholder="Role name" [(ngModel)]='data.role_name' readonly></textarea>
+    </mat-form-field>
+
+    <div class="first_div">
+        <div class="second_div">
+          <label class="job_title2 left">Report Selection</label>
+        </div>
+      </div>
+
+      <div class="check-div">
+        <input type="checkbox" class="margin" [(ngModel)]="first">
+        <span class="checkRight" (click)="checkChange(1)"></span>
+        <mat-label class="checkbox_text">Short Bio</mat-label>
+    </div>
+
+    <div class="check-div">
+        <input type="checkbox" class="margin" [(ngModel)]="second">
+        <span class="checkRight" (click)="checkChange(2)"></span>
+        <mat-label class="checkbox_text">LinkedIn Bio</mat-label>
+    </div>
+
+    <div class="check-div">
+        <input type="checkbox" class="margin" [(ngModel)]="third">
+        <span class="checkRight" (click)="checkChange(3)"></span>
+        <mat-label class="checkbox_text">Introduction</mat-label>
+    </div>
+
+    <div class="check-div">
+        <input type="checkbox" class="margin" [(ngModel)]="fourth">
+        <span class="checkRight" (click)="checkChange(4)"></span>
+        <mat-label class="checkbox_text">Resume</mat-label>
+    </div>
+
+    <div class="check-div">
+        <input type="checkbox" class="margin" [(ngModel)]="fifth">
+        <span class="checkRight" (click)="checkChange(5)"></span>
+        <mat-label class="checkbox_text">Ace the Interview</mat-label>
+    </div>
+
+
+      <!-- <div class="content">
+        <mat-checkbox [(ngModel)]='first' checked="false" (click)="checkChange(1)">Short Bio</mat-checkbox>
+      </div>
+      <div class="content">
+        <mat-checkbox color="primary" [(ngModel)]='second' checked="false" (click)="checkChange(2)">LinkedIn Bio</mat-checkbox>
+      </div>
+      <div class="content">
+        <mat-checkbox [(ngModel)]='third' checked="false" (click)="checkChange(3)">Introduction</mat-checkbox>
+      </div>
+      <div class="content">
+        <mat-checkbox [(ngModel)]='fourth' checked="false" (click)="checkChange(4)">Resume</mat-checkbox>
+      </div>
+      <div class="content">
+        <mat-checkbox [(ngModel)]='fifth' checked="false" (click)="checkChange(5)">Ace the Interview</mat-checkbox>
+      </div> -->
+
+
+      <div class="first_div">
+        <div class="second_div">
+          <label class="job_title2 left">Select Format</label>
+        </div>
+      </div>
+
+      <div class="first_div">
+        <div class="second_div right">
+          <div class="check-div">
+            <input type="checkbox" class="margin" [(ngModel)]="data.pdf">
+            <span class="checkRight" (click)="checkPdfWord(1)"></span>
+            <mat-label class="checkbox_text">PDF</mat-label>
+          </div>
+        </div>
+        <div class="second_div_1">
+          <div class="check-div">
+            <input type="checkbox" class="margin" [(ngModel)]="data.word">
+            <span class="checkRight" (click)="checkPdfWord(2)"></span>
+            <mat-label class="checkbox_text">Word</mat-label>
+          </div>
+        </div>
+      </div> 
+
+      <!-- <div class="first_div">
+        <div class="second_div right">
+          <mat-checkbox (click)="falseFormControl.setValue(false)"  [(ngModel)]="data.pdf" [formControl]="trueFormControl" >PDF</mat-checkbox>
+        </div>
+        <div class="second_div_1">
+          <mat-checkbox (click)="trueFormControl.setValue(false)" [(ngModel)]="data.word" [formControl]="falseFormControl">Word</mat-checkbox>
+        </div>
+      </div>  -->
+      <div class="report_row bottom" (click)="print()">
+        <div class="report_box1"><img src="assets/imgs/printer.png"></div>
+        <div class="report_box2">Print</div>
+      </div> 
+      <div class="two">
+        <button mat-raised-button class="previous back-btn" (click)="previous()">Previous</button>
+        <button mat-raised-button class="next-btn" (click)="generate()">Cancel</button>
+    </div>
+
+</div>

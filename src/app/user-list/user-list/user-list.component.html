@@ -1,0 +1,77 @@
+<div>
+      <mat-card>
+        <div fxLayout="row wrap" class="headerCard">
+            <div fxFlex.gt-sm="30" fxFlex.gt-md="30" fxFlex.gt-lg="30" fxFlex="100">
+             <h5 class="topLabel">User Listing</h5>
+            </div>
+            <div fxFlex.gt-sm="30" fxFlex.gt-md="30" fxFlex.gt-lg="30" fxFlex="100">
+             <div class="search">
+             <input class="search-txt" (keyup)="applyFilter($event)" placeholder="Type here....">
+             <button class="btn-srch">
+               <mat-icon>search</mat-icon>
+             </button>
+           </div>
+            </div>
+            <div fxFlex.gt-sm="20" fxFlex.gt-md="20" fxFlex.gt-lg="20" fxFlex="100"></div>
+            <div fxFlex.gt-sm="20" fxFlex.gt-md="20" fxFlex.gt-lg="20" fxFlex="100">
+             <button mat-button mat-raised-button class="add" (click)="adduser()">
+               <mat-icon>add</mat-icon>
+               Add
+             </button>
+            </div>
+         </div>
+        <mat-card-content>
+         
+          <table mat-table [dataSource]="dataSource" matSort>
+            <ng-container matColumnDef="srNo">
+              <th mat-header-cell *matHeaderCellDef class="font first-col"> Sr.No </th>
+              <td mat-cell *matCellDef="let element; let i= index"> {{ element.srNo }} </td>
+            </ng-container>
+  
+            <ng-container matColumnDef="first_name">
+              <th mat-header-cell *matHeaderCellDef class="font first-name-col"> First Name </th>
+              <td mat-cell *matCellDef="let element"> {{element.first_name}} </td>
+            </ng-container>
+  
+            <ng-container matColumnDef="last_name">
+              <th mat-header-cell *matHeaderCellDef class="font last-col"> Last Name </th>
+              <td mat-cell *matCellDef="let element"> {{element.last_name}} </td>
+            </ng-container>
+  
+            <ng-container matColumnDef="email">
+              <th mat-header-cell *matHeaderCellDef class="font first"> Email </th>
+              <td mat-cell *matCellDef="let element"  class="first-data"> {{element.email}} </td>
+            </ng-container>
+    
+            <ng-container matColumnDef="alternateEmail">
+              <th mat-header-cell *matHeaderCellDef class="font alternateEmail" fxHide fxShow.lg> Alternate email </th>
+              <td mat-cell *matCellDef="let element" fxHide fxShow.lg> {{element.alternateEmail}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="Action">
+                <th mat-header-cell *matHeaderCellDef class="font second"> Action </th>
+                <td mat-cell *cdkCellDef="let element" class="second">
+                  <button mat-button class="btn" data-toggle="tooltip" title="Profile!" (click)="getprofile(element.id)">
+                    <mat-icon color="primary">person_pin</mat-icon>
+                  </button>
+                  <button mat-button class="btn" data-toggle="tooltip" title="Resume!" (click)="getResume(element.id)">
+                    <mat-icon color="accent">receipt_long</mat-icon>
+                  </button>
+                  <button mat-button class="btn" data-toggle="tooltip" title="Delete!" (click)="openDialog(element.id)">
+                    <mat-icon color="warn">delete</mat-icon>
+                  </button>
+                  <button mat-button class="btn" data-toggle="tooltip" title="Settings!" (click)="getSetting(element.id, element.email)">
+                    <mat-icon color="accent">settings</mat-icon>
+                  </button>
+                </td>
+              </ng-container>
+  
+            <tr mat-header-row *matHeaderRowDef="displayedColumns" class="row"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            <!-- <tr mat-row *ngFor="let user of users"></tr> -->
+          </table>
+          <mat-paginator showFirstLastButtons></mat-paginator>
+          
+        </mat-card-content>
+      </mat-card>
+    </div>

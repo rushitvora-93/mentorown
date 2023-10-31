@@ -1,0 +1,60 @@
+  <div class="container">
+    <mat-form-field appearance="none">
+    <textarea matInput placeholder="Achievement Headline/Title" [(ngModel)]="achievementData.title" class="text-area"  rows="3"></textarea>
+  </mat-form-field>
+
+  <div class="first">
+    <span class="span_text"><b>Role</b><br>
+      (In which role did you achieve this?)</span>
+    <mat-menu class="text-area" xPosition="after" yPosition="below" #menu1="matMenu"> 
+        <div class="menuDesign">
+          <div class="checkbox" *ngFor="let item of itemsRoleLevel">
+            <mat-checkbox matInput [(ngModel)]="item.showDetails" (change)="clickTypeOfRole(item)">{{ item.title }}</mat-checkbox>
+          </div>
+      </div>
+      </mat-menu>
+      <div class="button_align">
+        <button mat-raised-button class="btn years" [matMenuTriggerFor]="menu1" (click)="selectedRole()">{{achievementData.role == '' || achievementData.role == null ? 'Add' : achievementData.role}}</button>
+      </div>
+  </div>
+
+  <div class="first">
+    <span class="span_text"><b>Capabilities</b><br>
+      (Which Capabilities are demonstrated by this Achievement, select all apply)</span>
+    <mat-menu class="text-area" xPosition="after" yPosition="below" #menu2="matMenu"> 
+        <div (click)="$event.preventDefault();" (keydown.tab)="$event.stopPropagation();"  class="menuDesign">
+          <div class="checkbox" (click)="$event.stopPropagation(); true;" *ngFor="let item of itemsCapabilitieLevel">
+            <mat-checkbox matInput [(ngModel)]="item.showDetails" (change)="clickTypeOfCapabilities(item)">{{ item.title }}</mat-checkbox>
+          </div>
+          <div class="row">
+            <button mat-button mat-raised-button class="left-btn button" (click)="selectedCapabilities()">save</button>
+            <button mat-button mat-raised-button class="right-btn button">cancel</button>
+          </div>
+      </div>
+      </mat-menu>
+      <div class="button_align">
+        <button mat-raised-button class="btn years" [matMenuTriggerFor]="menu2" (click)="discardChangesCompe()">{{achievementData.capabilities == '' || achievementData.capabilities == null ? 'Add' : achievementData.capabilities}}</button>
+      </div>
+  </div>
+
+  <div class="first">
+    <span class="span_text_desc"><b>Describe your Achievements</b><br>
+      What was the situation, what action did you take, what was the result?(Pro tip:Use "I" not "we")</span>
+  </div>
+
+  <mat-form-field appearance="none">
+    <textarea matInput placeholder="Situation" [(ngModel)]="achievementData.situation" class="text-area" rows="3"></textarea>
+  </mat-form-field>
+
+  <mat-form-field appearance="none">
+    <textarea matInput placeholder="Action" [(ngModel)]="achievementData.action" class="text-area"  rows="3"></textarea>
+  </mat-form-field>
+
+  <mat-form-field appearance="none">
+    <textarea matInput placeholder="Result" [(ngModel)]="achievementData.result" class="text-area"  rows="3"></textarea>
+  </mat-form-field>
+
+  <div>
+    <button mat-raised-button class="back-btn" (click)="back()">Save</button>
+</div>
+</div>

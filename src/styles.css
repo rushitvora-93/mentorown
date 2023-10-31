@@ -1,0 +1,53 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700');
+    
+body{
+    background-color: white !important;
+}
+
+.mat-card{
+    box-shadow: 10 10 10 10 black !important;
+}
+
+.mat-dialog-container{
+    position: relative;
+}
+
+mat-toolbar.green{
+    background-color: #7BC0BB !important;
+}
+
+.login-register{
+    position:relative;
+    z-index: 999;
+}
+.mat-sort-header-arrow{
+    color : orange !important;
+     opacity: 1 !important; 
+  }
+
+  mat-sidenav{
+      width: 240px !important;
+  }
+
+.mm_menu{
+    position: absolute;
+    right: 24px;
+    padding: 10px;
+  }
+  .mat-menu-panel {
+    max-width: 500px !important;
+}
+.mat-radio-button.mat-accent .mat-radio-inner-circle{
+    background-color: #538380 !important; 
+}
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+    border-color: #538380 !important;
+}
+.mat-checkbox-checked.mat-accent .mat-checkbox-background {
+    background-color: #7BC0BB !important;
+}
+
+.fr-wrapper > div{
+    display: none !important;
+}

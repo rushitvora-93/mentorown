@@ -1,0 +1,116 @@
+<mat-label>Title</mat-label>
+  <mat-form-field appearance="none">
+    <textarea matInput placeholder="Title" [(ngModel)]="experienceData.title" class="text-area"></textarea>
+  </mat-form-field>
+  <div>
+      <mat-label>Employement Role</mat-label><br>
+      <mat-menu class="text-area" #menu2="matMenu" [overlapTrigger]="false"> 
+        <div class="menuDesign">
+          <div class="checkbox" *ngFor="let item of industryListData">
+            <mat-checkbox matInput [(ngModel)]="item.showDetails" (change)="clickTypeOfJobIndustry(item)">{{ item.title }}</mat-checkbox>
+          </div>
+      </div>
+      </mat-menu>
+      <button  class="space" mat-icon-button [matMenuTriggerFor]="menu2"> 
+        <button mat-raised-button class="btn btn-primary" (click)="selectedType()">{{experienceData.industry == '' || experienceData.industry == null ? 'Add' : experienceData.industry}}</button>
+      </button><br><br>
+  </div>
+  <mat-label>Employement type</mat-label><br>
+  <mat-menu class="text-area" #menu1="matMenu"> 
+    <div (click)="$event.preventDefault();" (keydown.tab)="$event.stopPropagation();" class="menuDesign">
+      <div class="checkbox" *ngFor="let item of itemsTypeOfJob" (click)="$event.stopPropagation(); true;">
+        <mat-checkbox matInput [(ngModel)]="item.showDetails" (change)="clickTypeOfJob(item)">{{ item.title }}</mat-checkbox>
+      </div>
+      <div class="input"> 
+        <input matInput type="text" placeholder="Other" [(ngModel)]="other" (click)="$event.stopPropagation(); true;">
+        <button mat-button mat-raised-button class="button btngreen" (click)="onDone()">Done</button>
+      </div>
+      <div class="row">
+        <button mat-button mat-raised-button class="left-btn button" (click)="saveJob()">save</button>
+        <button mat-button mat-raised-button class="right-btn button">cancel</button>
+      </div>
+  </div>
+  </mat-menu>
+  <button class="space" mat-icon-button [matMenuTriggerFor]="menu1"> 
+    <button mat-raised-button class="btn btn-primary" (click)=" discardChangesJob()">{{experienceData.typeOfJob == '' || experienceData.typeOfJob == null ? 'Add' : experienceData.typeOfJob}}</button>
+  </button><br><br>
+
+  <mat-label>Company</mat-label>
+  <mat-form-field appearance="none">
+    <textarea matInput placeholder="Company" [(ngModel)]="experienceData.company" class="text-area"></textarea>
+  </mat-form-field>
+
+  <mat-label>Location</mat-label>
+  <mat-form-field appearance="none">
+    <textarea matInput placeholder="Location" [(ngModel)]="experienceData.location" class="text-area"></textarea>
+  </mat-form-field>
+
+    <div class="checkbox">
+      <mat-checkbox matInput [(ngModel)]="experienceData.currentlyWorking">I am currently working in this role</mat-checkbox>
+    </div>
+  
+  <mat-label>Start Month and year</mat-label>
+  <mat-form-field appearance="none">
+    <input class="text-area" *ngIf="update && start_date" matInput placeholder="Select month and year" [matDatepicker]="picker2" [(ngModel)]="lbl_start">
+    <input class="text-area" *ngIf="!start_date" matInput [matDatepicker]="picker" placeholder="Select month and year" [formControl]="start">
+    <mat-datepicker-toggle *ngIf="update || !start_date" (click)="start_date = false" matSuffix [for]="picker2"></mat-datepicker-toggle>
+    <mat-datepicker #picker
+                    startView="multi-year"
+                    (yearSelected)="chosenYearHandlerStartDate($event)"
+                    (monthSelected)="chosenMonthHandlerStartDate($event, picker)"
+                    panelClass="example-month-picker">
+  </mat-datepicker>
+  <mat-datepicker #picker2
+                    startView="multi-year"
+                    (yearSelected)="chosenYearHandlerStartDate($event)"
+                    (monthSelected)="chosenMonthHandlerStartDate($event, picker2)"
+                    panelClass="example-month-picker">
+  </mat-datepicker>
+  </mat-form-field>
+
+  <mat-label>End Month and year</mat-label>
+    <div class="{{ experienceData.currentlyWorking ? '  ' : ' hide ' }}">
+      <div class="text-area-present">
+      Present</div>
+  </div>
+  <div class="{{ experienceData.currentlyWorking ? ' hide ' : '  '}}">
+    <mat-form-field appearance="none" >
+      <input class="text-area" *ngIf="update && end_date" matInput placeholder="Select month and year" [matDatepicker]="picker3" [(ngModel)]="lbl_end">
+      <input class="text-area" *ngIf="!end_date" matInput [matDatepicker]="picker1" placeholder="Select month and year" [formControl]="end">
+      <mat-datepicker-toggle *ngIf="update || !end_date" (click)="end_date = false" matSuffix [for]="picker3"></mat-datepicker-toggle>
+      <mat-datepicker #picker1
+                      startView="multi-year"
+                      (yearSelected)="chosenYearHandlerEndDate($event)"
+                      (monthSelected)="chosenMonthHandlerEndDate($event, picker1)"
+                      panelClass="example-month-picker">
+      </mat-datepicker>
+      <mat-datepicker #picker3
+                      startView="multi-year"
+                      (yearSelected)="chosenYearHandlerEndDate($event)"
+                      (monthSelected)="chosenMonthHandlerEndDate($event, picker3)"
+                      panelClass="example-month-picker">
+      </mat-datepicker>
+    </mat-form-field>
+  </div>
+  
+    
+
+ 
+    <div class="checkbox">
+        <mat-checkbox matInput [(ngModel)]="experienceData.myHedlineChecked">Update my headline</mat-checkbox>
+    </div>
+    <div class="{{ experienceData.myHedlineChecked ? ' ' : ' hide' }}" >
+        <mat-label>Headlines</mat-label>
+        <mat-form-field appearance="none">
+        <textarea matInput placeholder="Description" [(ngModel)]="experienceData.headline" class="text-area" rows="3"></textarea>
+        </mat-form-field>
+    </div>
+
+  <mat-label>Description</mat-label>
+  <mat-form-field appearance="none">
+    <textarea matInput placeholder="Description" [(ngModel)]="experienceData.description" class="text-area" rows="6"></textarea>
+  </mat-form-field>
+
+<div>
+    <button mat-raised-button class="back-btn" (click)="back()">Save</button>
+</div>

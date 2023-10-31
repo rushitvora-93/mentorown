@@ -1,0 +1,81 @@
+.next-btn{
+    margin-top:15px;
+    margin-bottom:15px;
+    text-align: center;
+    border: 1px solid #7BC0BB;
+    box-shadow: none;
+    float: right;
+    margin-right:25px;
+}
+.back-btn{
+    margin-top:15px;
+    margin-bottom:15px;
+    text-align: center;
+    border: 1px solid #7BC0BB;
+    box-shadow: none;
+    margin-left: 25px;
+}
+.img{
+    width: 100%;
+}
+.plus{
+  width:12px;
+  height:12px;
+  margin-right: 2px;
+}
+b{
+    left:0;
+}
+.round{
+    position: absolute;
+      right: 88px;
+      top: 75px;
+      height: 16px;
+  }
+  .one{
+    font-size: 10px;
+  }
+  .grey{
+    color: grey;
+  }
+  .desc{
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
+  }
+  .edit_img{
+    width: 12px;
+    height: 16px;
+    margin-top: 2px;
+    }
+  .main{
+      max-height:380px !important;
+      overflow-y: scroll;
+  }
+  .title-wrapper{
+    position: relative;
+  }
+  .main-data{
+      padding-right: 20px;
+  }
+  .pencil{
+      align-items: flex-end;
+      position: absolute;
+      right: 0px;
+  }
+  .left{
+    float: left;
+  }
+  .delete{
+    display: flex;
+    float: right;
+    font-size: 22px;
+  }
+  .generate{
+    width: 100%;
+  }
+  .button{
+  background-color:#538380;
+  color:white;
+  }

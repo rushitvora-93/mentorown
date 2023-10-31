@@ -1,0 +1,254 @@
+.next-btn {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  text-align: center;
+  border: 1px solid #7BC0BB;
+  box-shadow: none;
+  float: right;
+  margin-right: 10px;
+}
+
+.back-btn {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  text-align: center;
+  border: 1px solid #7BC0BB;
+  box-shadow: none;
+  margin-left: 10px;
+}
+
+.img {
+  width: 100%;
+}
+
+.preference_home_row {
+  width: 100%;
+  float: left;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-around;
+  color: grey;
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  margin-top: 15px;
+}
+
+.preference_home_row.notsaprat {
+  width: 30%;
+}
+
+.preference_home_row.saprat {
+  width: 5%;
+}
+
+.main_div {
+  display: flex;
+  padding: 0;
+  justify-content: center;
+}
+
+.div_set {
+  width: 100% !important;
+  justify-content: center;
+  text-align: center;
+}
+
+.either_div {
+  justify-content: center;
+    display: flex;
+    align-items: center;
+  width: 100% !important;
+  background: #fffefe;
+  margin-bottom: 10px;
+  height: 80px;
+  justify-content: center;
+  align-items: center;
+  float: left;
+  font-size: 13px;
+  justify-items: center;
+  color: black;
+}
+
+.either_div {
+  border-right: 1px solid #7BC0BB;
+}
+
+.either_div.even {
+  border-right-color: white;
+}
+
+.either_div.borderclass {
+  border-left: 1px solid black;
+}
+
+.either_div.borderclass .active {
+  border-left: 1px solid white;
+}
+
+.either_div.active {
+  background-color: #538380;
+  color: #fff;
+}
+
+.new_job_main_title {
+  font-weight: bold;
+}
+
+.title {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.row-cell {
+  width: 60% !important;
+  background-color: #eef5f9 !important;
+}
+
+.text-grey {
+  color: grey;
+}
+
+.text-label {
+  font-size: 22px;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.table_row.text-green {
+  background: #C9E4E2 !important;
+  font-size: 12px !important;
+  font-weight: bold !important;
+  justify-content: start;
+  padding-left: 10px;
+}
+
+.text-left {
+  margin-left: 90px;
+}
+
+.table_main .table_row {
+  width: 100%;
+  font-size: 15px;
+  padding-right: 10px;
+}
+
+.table_main {
+  display: flex;
+  justify-content: space-between;
+  border-radius: 10px;
+  align-items: center;
+  height: 40px;
+  width: 100%;
+}
+
+.table_data .table_row {
+  font-size: 15px;
+}
+
+.table_data .table_row {
+  font-size: 15px;
+  font-weight: normal;
+  width: 100%;
+  margin-bottom: 2px;
+}
+
+.table_row {
+  width: 100px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.table_data .table_row:last-child {
+  border-right-color: white;
+  border-top-right-radius: 13px;
+  border-bottom-right-radius: 13px;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 375px) {
+  .table_data .table_row .text-box {
+    width: 62px;
+  }
+}
+
+@media only screen and (min-width: 376px) and (max-width: 475px) {
+  .table_data .table_row .text-box {
+    width: 76px;
+  }
+}
+
+@media only screen and (min-width: 476px) and (max-width: 530px) {
+  .table_data .table_row .text-box {
+    width: 110px;
+  }
+}
+
+@media only screen and (min-width: 531px) and (max-width: 576px) {
+  .table_data .table_row .text-box {
+    width: 141px;
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 660px) {
+  .table_data .table_row .text-box {
+    width: 150px;
+  }
+}
+
+@media only screen and (min-width: 661px) and (max-width: 790px) {
+  .table_data .table_row .text-box {
+    width: 177px;
+  }
+}
+
+@media only screen and (min-width: 791px) and (max-width: 991px) {
+  .table_data .table_row .text-box {
+    width: 217px;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1000px) {
+  .table_data .table_row .text-box {
+    width: 280px;
+  }
+}
+
+@media only screen and (min-width: 1001px) and (max-width: 1300px) {
+  .table_data .table_row .text-box {
+    width: 290px;
+  }
+}
+
+@media only screen and (min-width: 1301px) and (max-width: 1600px) {
+  .table_data .table_row .text-box {
+    width: 385px;
+  }
+}
+
+mat-slider {
+  background-color: #eef5f9 !important;
+}
+
+.slider {
+  width: 100%;
+}
+
+.range_slider_title {
+  display: inline-flex;
+  margin-top: 10px;
+}
+
+.table_data {
+  display: flex;
+  justify-content: space-between;
+}
+.generate{
+  width: 100%;
+}
+.button{
+background-color:#538380;
+color:white;
+}

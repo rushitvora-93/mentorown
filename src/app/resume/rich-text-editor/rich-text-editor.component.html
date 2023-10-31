@@ -1,0 +1,16 @@
+<div class="container">
+    <form [formGroup]="myForm">
+        <div formArrayName="formModels">
+            <div *ngFor="let item of getControls(); let i=index" [formGroupName]="i">
+                <textarea formControlName="formModel" [(ngModel)]="items[i].file_html" [froalaEditor]='froalaEditors[i]'></textarea>
+            </div>
+        </div>
+        <div class="two">
+            <button mat-raised-button class="previous back-btn" (click)="previous()">Back</button>
+            <button mat-raised-button class="save next-btn" (click)="onSubmit(myForm.value)" type="submit">Submit</button>
+        </div>
+      </form>
+    <!-- <div class="background">
+        <angular-editor [(ngModel)]="htmlContent" [config]="config"></angular-editor>
+    </div> -->
+</div>
